@@ -3,10 +3,16 @@
   <div><span>id: </span>{{lineOfBusiness.id}}</div>
   <div>
     <label for="lineOfBusiness-name">Line Of Business Name: </label>
-    <input id="lineOfBusiness-name" [(ngModel)]="lineOfBusiness.name" placeholder="Line Of Business Name"/>
+    <input id="lineOfBusiness-name" [(ngModel)]="lineOfBusiness.name" placeholder="Line Of Business Name" />
     <br />
     <label for="lineOfBusiness-description">Line Of Business Description: </label>
-    <input id="lineOfBusiness-description" [(ngModel)]="lineOfBusiness.description" placeholder="Line Of Business Description"/>
+    <input id="lineOfBusiness-description" [(ngModel)]="lineOfBusiness.description"
+      placeholder="Line Of Business Description" />
+  </div>
+  <div class="recentQuote">
+
+    {{quoteSummary.name}} has been quoted {{ quoteSummary.count}} time(s).
+
   </div>
   <button (click)="goBack()">Go Back</button>
   <button (click)="save()">Save</button>

@@ -1,0 +1,12 @@
+
+ul.quoteSummary {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: .95rem;
+}

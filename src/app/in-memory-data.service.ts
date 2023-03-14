@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { LineOfBusiness } from './LineOfBusiness';
+import { RecentQuote } from './RecentQuote';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +28,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 108, quoteNumber: 'AC127PC', lineOfBusiness: 15 }
     ];
 
-    return {linesOfBusiness};
+    return { linesOfBusiness, recentQuotes };
   }
 
   // Overrides the genId method to ensure that a line of business always has an id.
@@ -35,7 +36,8 @@ export class InMemoryDataService implements InMemoryDbService {
   // the method below returns the initial number (11).
   // if the lines of business array is not empty, the method below returns the highest
   // line of business id + 1.
-  genId(linesOfBusiness: LineOfBusiness[]): number {
-    return linesOfBusiness.length > 0 ? Math.max(...linesOfBusiness.map(lineOfBusiness => lineOfBusiness.id)) + 1 : 11;
+  genId<T extends LineOfBusiness | RecentQuote>(currentTable: T[]): number {
+    return currentTable.length > 0 ? Math.max(...currentTable.map(t => t.id)) + 1 : 11;
+
   }
 }

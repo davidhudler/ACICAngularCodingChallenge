@@ -6,6 +6,7 @@ label {
 input {
   font-size: 1em;
   padding: .5rem;
+  margin-bottom: 3px;
 }
 button {
   margin-top: 20px;
@@ -23,3 +24,9 @@ button:disabled {
   color: #ccc;
   cursor: auto;
 }
+ .recentQuote{
+  padding-top:18px;
+  padding-left: 3px;
+  font-weight: bold;
+  font-size: .95rem;
+ }
